@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,6 +21,19 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        User::create([
+            'name' => 'Kis Pista',
+            'email' => 'kicsipisti@inter-net.com',
+            'password' => "kicsipistike"
+        ],
+        [
+            'name' => 'Teker Gergő',
+            'email' => 'tekergo.geri@inter-net.com',
+            'password' => "tekergogeri21"
+        ]
+    );
+        
     }
 
     /**
@@ -29,4 +43,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
     }
+
+
 };
